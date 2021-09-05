@@ -10,7 +10,7 @@ export default function Welcome(props) {
     <div className="presentation">
       <h1>Salut {props.name}, comment vas-tu ?</h1>
       <button onClick={toggleCoucou}>Faire salut</button>
-      {coucou && <p>👋😀</p>}
+      {coucou ? <p>👋😀</p> : ""}
     </div>
   );
 }
