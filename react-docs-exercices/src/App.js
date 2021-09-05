@@ -1,9 +1,10 @@
 import './App.css';
 
 function App() {
+  const nom = "Alexandre";
   return (
     <div className="App">
-      <h1>HELLO WORLD</h1>
+      <h1>HELLO {nom}</h1>
     </div>
   );
 }
