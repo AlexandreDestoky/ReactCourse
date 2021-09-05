@@ -1,14 +1,12 @@
 import './App.css';
-import Welcome from './Welcome';
-import Clock from './Clock';
+import Liste from './Liste';
 
 function App() {
-  const nom = "Alexandre";
+  const tabPrenoms = ["Jean","Marc","Luc","Thomas"];
+
   return (
     <div className="App">
-      <h1>HELLO {nom}</h1>
-      <Welcome name="Jean"/>
-      <Clock/>
+      <Liste tab={tabPrenoms}/>
     </div>
   );
 }
