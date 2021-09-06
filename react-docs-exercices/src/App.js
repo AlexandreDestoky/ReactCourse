@@ -1,19 +1,25 @@
-import './App.css';
-// import Liste from './Liste';
-import Formulaire from './Formulaire';
+import "./App.css";
+import InputPoids from "./InputPoids";
+import { useState } from "react";
 
 function App() {
-  const tabPrenoms = ["Jean","Marc","Luc","Thomas"];
+  const [weight, setWeight] = useState({
+    poids: "0",
+    format: "kg",
+  });
+  
+  const poidsKg = weight.format === "kg" ? weight.poids : (weight.poids / 2.2).toFixed(2);
+  const poidsLbs = weight.format === "lbs" ? weight.poids : (weight.poids * 2.2).toFixed(2);
+
+  const ajustePoidsKg = e => setWeight({ poids: e.target.value, format: "kg" });
+  const ajustePoidsLbs = e => setWeight({ poids: e.target.value, format: "lbs" });
 
   return (
     <div className="App">
-      {/* <Liste tab={tabPrenoms}/> */}
-      <Formulaire/>
-
+      <InputPoids placeholder="kg" format="kg" fonctionApp={ajustePoidsKg} poids={poidsKg} />
+      <InputPoids placeholder="lbs" format="lbs" fonctionApp={ajustePoidsLbs} poids={poidsLbs} />
     </div>
   );
 }
-
-
 
 export default App;
