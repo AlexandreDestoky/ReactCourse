@@ -11,4 +11,5 @@ function App() {
   );
 }
 //Explication optimisation accèsibilité pour personne avec handicap
+//Explication Webpack
 export default App;
